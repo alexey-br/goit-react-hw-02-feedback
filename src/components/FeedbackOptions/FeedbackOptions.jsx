@@ -1,16 +1,20 @@
 import PropTypes from 'prop-types';
+import Box from 'components/Box';
+import { OptionItem, OptionBtn } from './FeedbackOptions.styled';
 
 export default function FeedbackOptions({ options, onLeaveFeedback }) {
   return (
-    <ul>
+    <Box m={0} p={0} display={'flex'} flexGap={2} as="ul">
       {options.map((option, index) => {
         return (
-          <li key={index}>
-            <button onClick={() => onLeaveFeedback(option)}>{option}</button>
-          </li>
+          <OptionItem key={index}>
+            <OptionBtn onClick={() => onLeaveFeedback(option)}>
+              {option}
+            </OptionBtn>
+          </OptionItem>
         );
       })}
-    </ul>
+    </Box>
   );
 }
 

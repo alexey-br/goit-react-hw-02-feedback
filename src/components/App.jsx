@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import Box from './Box';
 import Section from './Section';
 import Statistics from './Statistics';
 import FeedbackOptions from './FeedbackOptions';
@@ -11,7 +12,7 @@ export class App extends Component {
     bad: 0,
   };
 
-  incrementStatistics = comment => {
+  handleLeaveFeedback = comment => {
     this.setState(prevState => {
       return { [comment]: prevState[comment] + 1 };
     });
@@ -35,15 +36,15 @@ export class App extends Component {
     const { good, neutral, bad } = this.state;
 
     return (
-      <>
-        <Section title="Please leave feedback">
+      <Box p={4}>
+        <Section title="Please leave feedback:">
           <FeedbackOptions
             options={['good', 'neutral', 'bad']}
-            onLeaveFeedback={this.incrementStatistics}
+            onLeaveFeedback={this.handleLeaveFeedback}
           />
         </Section>
 
-        <Section title="Statistics">
+        <Section title="Statistics:">
           {this.countTotalFeedback() ? (
             <Statistics
               good={good}
@@ -56,7 +57,7 @@ export class App extends Component {
             <Notification message="There is no feedback" />
           )}
         </Section>
-      </>
+      </Box>
     );
   }
 }

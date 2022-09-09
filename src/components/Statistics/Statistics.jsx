@@ -1,4 +1,6 @@
 import PropTypes from 'prop-types';
+import Box from 'components/Box';
+import { StatItem } from './Statistics.styled';
 
 export default function Statistics({
   good,
@@ -8,23 +10,23 @@ export default function Statistics({
   positivePercentage,
 }) {
   return (
-    <ul>
-      <li>
+    <Box as="ul" p={0} m={0}>
+      <StatItem>
         <span>Good: {good}</span>
-      </li>
-      <li>
+      </StatItem>
+      <StatItem>
         <span>Neutral: {neutral}</span>
-      </li>
-      <li>
+      </StatItem>
+      <StatItem>
         <span>Bad: {bad}</span>
-      </li>
-      <li>
+      </StatItem>
+      <StatItem>
         <span>Total: {total()}</span>
-      </li>
-      <li>
+      </StatItem>
+      <StatItem>
         <span>Positive feedback: {total() ? positivePercentage() : 0}%</span>
-      </li>
-    </ul>
+      </StatItem>
+    </Box>
   );
 }
 

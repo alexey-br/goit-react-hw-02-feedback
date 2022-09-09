@@ -1,7 +1,12 @@
 import PropTypes from 'prop-types';
+import Box from 'components/Box';
 
 export default function Notification({ message }) {
-  return <p>{message}</p>;
+  return (
+    <Box as="p" m={0} color={'muted'}>
+      {message}
+    </Box>
+  );
 }
 
 Notification.propTypes = {
