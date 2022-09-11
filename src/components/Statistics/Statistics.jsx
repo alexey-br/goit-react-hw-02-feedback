@@ -11,20 +11,12 @@ export default function Statistics({
 }) {
   return (
     <Box as="ul" p={0} m={0}>
+      <StatItem>Good: {good}</StatItem>
+      <StatItem>Neutral: {neutral}</StatItem>
+      <StatItem>Bad: {bad}</StatItem>
+      <StatItem>Total: {total()}</StatItem>
       <StatItem>
-        <span>Good: {good}</span>
-      </StatItem>
-      <StatItem>
-        <span>Neutral: {neutral}</span>
-      </StatItem>
-      <StatItem>
-        <span>Bad: {bad}</span>
-      </StatItem>
-      <StatItem>
-        <span>Total: {total()}</span>
-      </StatItem>
-      <StatItem>
-        <span>Positive feedback: {total() ? positivePercentage() : 0}%</span>
+        Positive feedback: {total() ? positivePercentage() : 0}%
       </StatItem>
     </Box>
   );
