@@ -33,7 +33,7 @@ export const theme = {
     none: 'none',
     normal: '1px solid #2a2a2a',
   },
-  radius: {
+  radii: {
     none: '0',
     normal: '4px',
     round: '50%',
